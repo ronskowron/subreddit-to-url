@@ -13,3 +13,4 @@ I made this extension to combat this! A user can type their desired subreddit in
 ## Future Goals
 * Search subreddits through the address bar
 * Actually add it to the extension marketplace
+* Think of a better name
