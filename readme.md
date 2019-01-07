@@ -14,4 +14,4 @@ I made this extension to combat this! A user can type their desired subreddit in
 * Search subreddits through the address bar
 * Actually add it to the extension marketplace
 * Think of a better name
-* add more websites instead of just reddit?
+* Add more websites instead of just reddit?
