@@ -1,15 +1,15 @@
 {
-    "name": "GoTo Subreddit",
-    "version": "1.0",
-    "description": "Instantly go to a subreddit through Chrome's address bar. Just type a subreddit (ex: /r/AskReddit) and press enter!",
-    "permissions": [
-      "webNavigation",
-      "tabs"
-    ],
-    "background": {
-        "scripts": ["background.js"],
-        "persistent": false
-      },
-      
-    "manifest_version": 2
-  }
+  "name": "subreddit-to-url",
+  "version": "0.1",
+  "description": "Instantly go to a subreddit through your address bar. Just type a subreddit (i.e. r/AskReddit) and press enter!",
+  "permissions": [
+    "webNavigation",
+    "tabs"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+
+  "manifest_version": 2
+}

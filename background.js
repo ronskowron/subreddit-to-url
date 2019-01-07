@@ -6,21 +6,27 @@ __ __    ___  _      _       ___
 |  |  ||   [_ |     ||     ||     |
 |  |  ||     ||     ||     ||     |
 |__|__||_____||_____||_____| \___/ 
+- Ronnie 
 */
 
+// Listen for the browsers navigation event
+chrome.webNavigation.onBeforeNavigate.addListener(details => {
+  // get the current URL to check
+  // if the user wants to navigate to a subreddit
+  var currentURL = "";
+  var googleSearchURL = "";
+  var regexPattern = "";
+  currentURL = details.url;
 
-chrome.webNavigation.onBeforeNavigate.addListener((details) => {
-    var currentURL = "";
-    var googleSearchSTR = "";
-    var patt = "";
-    currentURL = details.url;
-    googleSearchSTR = "https://www.google.ca/search?q=r%2F";
-    patt = /(?<==r%2F)(.*?)(?=&|$)/g;
+  googleSearchURL = "https://www.google.ca/search?q=r%2F";
 
-    var subreddit = patt.exec(currentURL);
+  //using regex, check if the URL contains r/ (r%2F) then grab the string between the r/ and & sign
 
-    chrome.tabs.update(null, {
-        url: "https://www.reddit.com/r/" + subreddit[0]
-    });
+  regexPattern = /(?<==r%2F)(.*?)(?=&|$)/g;
 
+  var subreddit = patt.exec(currentURL);
+
+  chrome.tabs.update(null, {
+    url: "https://www.reddit.com/r/" + subreddit[0]
+  });
 });
