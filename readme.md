@@ -8,3 +8,4 @@ I made this google extension to combat this! A user can type their desired subre
 ## Future Goals
 * Dynamically work for all search engines
 * Search subreddits through the address bar
+* Actually add it to the extension marketplace
