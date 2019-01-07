@@ -13,6 +13,7 @@ __ __    ___  _      _       ___
 chrome.webNavigation.onBeforeNavigate.addListener(details => {
   // get the current URL to check
   // if the user wants to navigate to a subreddit
+  var firstRegexSelection = 0;
   var currentURL = "";
   var googleSearchURL = "";
   var regexPattern = "";
@@ -21,12 +22,11 @@ chrome.webNavigation.onBeforeNavigate.addListener(details => {
   googleSearchURL = "https://www.google.ca/search?q=r%2F";
 
   //using regex, check if the URL contains r/ (r%2F) then grab the string between the r/ and & sign
-
   regexPattern = /(?<==r%2F)(.*?)(?=&|$)/g;
+  var subreddit = regexPattern.exec(currentURL);
 
-  var subreddit = patt.exec(currentURL);
-
+  // update the current tab by directing the user to the desired subreddit.
   chrome.tabs.update(null, {
-    url: "https://www.reddit.com/r/" + subreddit[0]
+    url: "https://www.reddit.com/r/" + subreddit[firstRegexSelection]
   });
 });
